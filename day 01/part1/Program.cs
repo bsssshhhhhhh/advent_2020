@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AdventCommon;
 
 namespace day_01
 {
@@ -15,12 +16,11 @@ namespace day_01
                 return 1;
             }
 
-            var entry1 = entries.Last();
-            var entry1Index = entries.Length - 1;
-
-            while (entry1Index > 0)
+            
+            for (var entry1Index = 0; entry1Index < entries.Length; entry1Index++)
             {
-                for (var entry2Index = 0; entry2Index < entry1Index; entry2Index++)
+                var entry1 = entries[entry1Index];
+                for (var entry2Index = entry1Index; entry2Index < entries.Length; entry2Index++)
                 {
                     var entry2 = entries[entry2Index];
                     if (entry1 + entry2 == 2020)
@@ -29,9 +29,6 @@ namespace day_01
                         return 0;
                     }
                 }
-
-                entry1Index--;
-                entry1 = entries[entry1Index];
             }
 
             return 0;
@@ -44,21 +41,7 @@ namespace day_01
 
         static int[] GetExpenseReportEntries()
         {
-            // read numbers from stdin
-            var nums = new List<int>();
-
-            string line;
-            while (!string.IsNullOrEmpty(line = Console.ReadLine()))
-            {
-                if (!int.TryParse(line, out int num))
-                {
-                    continue;
-                }
-
-                nums.Add(num);
-            }
-
-            return nums.ToArray();
+            return ConsoleHelpers.ReadAllLines().Select(line => int.Parse(line)).ToArray();
         }
     }
 }
