@@ -10,7 +10,7 @@ namespace day_02
     {
         static int Main(string[] args)
         {
-            var entries = ConsoleHelpers.ReadAllLines().Select(PasswordEntry.Parse);
+            var entries = ConsoleHelpers.ReadInput().Select(PasswordEntry.Parse);
             Console.WriteLine(entries.Count(IsPasswordValid));
             return 0;
         }

@@ -41,7 +41,7 @@ namespace day_01
 
         static int[] GetExpenseReportEntries()
         {
-            return ConsoleHelpers.ReadAllLines().Select(line => int.Parse(line)).ToArray();
+            return ConsoleHelpers.ReadInput().Select(line => int.Parse(line)).ToArray();
         }
     }
 }

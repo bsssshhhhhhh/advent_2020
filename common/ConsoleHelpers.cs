@@ -6,7 +6,7 @@ namespace AdventCommon
 {
     public static class ConsoleHelpers
     {
-        public static string[] ReadAllLines()
+        public static string[] ReadInput()
         {
             var lines = new List<string>();
             string line;
