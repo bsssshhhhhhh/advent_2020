@@ -10,7 +10,7 @@ namespace AdventCommon
         {
             var lines = new List<string>();
             string line;
-            while (!string.IsNullOrEmpty(line = Console.ReadLine()))
+            while ((line = Console.ReadLine()) != null)
             {
                 lines.Add(line);
             }
