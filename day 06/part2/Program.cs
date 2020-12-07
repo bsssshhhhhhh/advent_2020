@@ -32,7 +32,7 @@ namespace part2
 
                     return remaining.Length;
                 })
-                .Aggregate(0, (prev, cur) => prev + cur);
+                .Sum();
 
 
             Console.WriteLine(answer);

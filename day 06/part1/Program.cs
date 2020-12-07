@@ -16,7 +16,7 @@ namespace part1
                     .Replace("\n", "")
                     .Distinct()
                     .Count())
-                .Aggregate(0, (prev, cur) => prev + cur);
+                .Sum();
 
 
             Console.WriteLine(answer);
